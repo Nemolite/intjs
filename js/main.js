@@ -1,53 +1,65 @@
-/* Функции */
-function firstFunc(){
-	return 23;
+/*Область видимости переменных*/
+
+let exam = 10;  // Global
+
+function testFunc() {
+	console.log(exam);
+}
+testFunc();
+
+function testLocalvar(){
+	let nwo = 17;
+
+}
+testLocalvar();
+
+// console.log(nwo); 
+
+function reTxt(){
+	tamar = 100;
 }
 
-console.log(firstFunc());
+reTxt();
+console.log(tamar);
 
-let firstVar = firstFunc();
+/*Область видимости переменных в блоках*/
+function isThePriceRight(cost) {
+	let total = cost + 1;
+	if (total > 3) {
+		console.log(total);
+	} else {
+		console.log("Что-то другое");
+	}
+   }
+isThePriceRight(4);
 
-console.log(firstVar);
 
-function theSum(a,b){
-	let sum = a + b;
-	console.log(sum);
-}
-theSum(2,2);
+function isThePriceRight(cost) {
+	let total = cost + 1;
+	if (total > 3) {
+	let warning = true;  // var
+	console.log(total);
+	} else {
+		console.log("Что-то другое");
+	}
+	//console.log(warning);
+   }
+isThePriceRight(4);
 
-function theString(a = "Hello",b = "World"){
-	let con = a + b;
-	return con;
-}
-console.log("=====");
-console.log(theString());
-console.log("=====");
 
-function theEmpty(){
-let sd;
-}
-let temp = theEmpty();
-console.log(temp);
 
-(function myFunc() {
-	console.log(111);
-}());
-
-const myArrowFunc = (a,b) => {return a+b};
-
-console.log(myArrowFunc()); //NaN
-
-console.log(myArrowFunc(2,3));
-
-let myNewVarTon = () =>23;
-console.log(myNewVarTon());
-
-const elMagic = (a = 2,b = 3) => {
-	return a + b;
+if (3 > 2 ) {
+	let er = 100;
 }
 
-console.log(elMagic());
-console.log(elMagic(4,4));
-console.log(elMagic("Hello","World"));
+//console.log(er);
+
+console.log(redf);
+var redf = 22;
+
+
+let foo;
+alert(foo);
+foo = "Hello!";
 
 
