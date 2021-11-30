@@ -59,7 +59,58 @@ var redf = 22;
 
 
 let foo;
-alert(foo);
+console.log(foo);
 foo = "Hello!";
+
+/*Замыкание*/
+
+function testOnFunc(a,b){
+	return a + b;
+}
+
+let res1 = testOnFunc(2,2);
+console.log(res1);
+
+
+function funGlob() {
+	console.log("Glob");
+	function funInr() {
+		console.log("Inner");
+	}
+	return funInr;
+}
+
+let tempergen = funGlob();
+tempergen();
+
+
+function myPrimer(){
+	let timing = Date.now();
+	function myPrIn(){
+		let razniz = Date.now() - timing;
+		console.log(razniz);
+	}
+	return myPrIn;
+}
+
+let selp = myPrimer();
+
+for (let i = 0; i < 1000000; i++) {
+	let foo = Math.random() * 10000;
+}
+
+selp();
+
+
+function myPurt(){
+	let mert = 27;
+	function myIsir(){
+		console.log(mert);
+	}
+	return myIsir;
+}
+
+let out2 = myPurt();
+out2();
 
 
