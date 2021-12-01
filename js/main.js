@@ -1,116 +1,42 @@
-/*Область видимости переменных*/
+/*Object*/
+a = [x=>x+x,2];
+console.log(a[0](a[1]));
 
-let exam = 10;  // Global
+points = [
+	{x:2,y:3},
+	{x:4,y:7}
+]
 
-function testFunc() {
-	console.log(exam);
+console.log(points);
+
+points.dist = function() {
+	let p1 = this[0];
+	console.log(p1);
+	let p2 = this[1];
+	console.log(p2);
+	let a = p1.x - p2.x;
+	let b = p2.y - p2.y;
+	return Math.sqrt(a*a + b*b);
+
 }
-testFunc();
+console.log(points.dist());
 
-function testLocalvar(){
-	let nwo = 17;
+let [x,y] = [1,2]
+console.log(x);
+console.log(y);
 
-}
-testLocalvar();
+let [x1, ...y1] = [1,2,3,4];
+console.log(x1);
+console.log(y1);
 
-// console.log(nwo); 
-
-function reTxt(){
-	tamar = 100;
-}
-
-reTxt();
-console.log(tamar);
-
-/*Область видимости переменных в блоках*/
-function isThePriceRight(cost) {
-	let total = cost + 1;
-	if (total > 3) {
-		console.log(total);
-	} else {
-		console.log("Что-то другое");
-	}
-   }
-isThePriceRight(4);
-
-
-function isThePriceRight(cost) {
-	let total = cost + 1;
-	if (total > 3) {
-	let warning = true;  // var
-	console.log(total);
-	} else {
-		console.log("Что-то другое");
-	}
-	//console.log(warning);
-   }
-isThePriceRight(4);
-
-
-
-if (3 > 2 ) {
-	let er = 100;
-}
-
-//console.log(er);
-
-console.log(redf);
-var redf = 22;
-
-
-let foo;
-console.log(foo);
-foo = "Hello!";
-
-/*Замыкание*/
-
-function testOnFunc(a,b){
-	return a + b;
-}
-
-let res1 = testOnFunc(2,2);
-console.log(res1);
-
-
-function funGlob() {
-	console.log("Glob");
-	function funInr() {
-		console.log("Inner");
-	}
-	return funInr;
-}
-
-let tempergen = funGlob();
-tempergen();
-
-
-function myPrimer(){
-	let timing = Date.now();
-	function myPrIn(){
-		let razniz = Date.now() - timing;
-		console.log(razniz);
-	}
-	return myPrIn;
-}
-
-let selp = myPrimer();
-
-for (let i = 0; i < 1000000; i++) {
-	let foo = Math.random() * 10000;
-}
-
-selp();
-
-
-function myPurt(){
-	let mert = 27;
-	function myIsir(){
-		console.log(mert);
-	}
-	return myIsir;
-}
-
-let out2 = myPurt();
-out2();
+let [x2, ...y2] = "Hello";
+console.log(x2);
+console.log(y2);
+/*=============*/
+let obj = new Object(
+	
+)
+console.log(typeof obj);
+console.log(obj);
 
 
