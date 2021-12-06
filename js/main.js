@@ -1,42 +1,33 @@
-/*Object*/
-a = [x=>x+x,2];
-console.log(a[0](a[1]));
+/*Array*/
+a = [1,2,3];
+console.log(a.length);
 
-points = [
-	{x:2,y:3},
-	{x:4,y:7}
-]
+let b = a;
+console.log(b);
 
-console.log(points);
+b[0] = 13;
+console.log(b);
+console.log(a);
 
-points.dist = function() {
-	let p1 = this[0];
-	console.log(p1);
-	let p2 = this[1];
-	console.log(p2);
-	let a = p1.x - p2.x;
-	let b = p2.y - p2.y;
-	return Math.sqrt(a*a + b*b);
+let c= Array.from(a);
+console.log(c);
 
+c[0] = 31;
+console.log(b);
+console.log(a);
+console.log(c);
+
+/*
+let d= Array.from(a, (x)=>{
+return x+2;
+});
+console.log(d);
+*/
+
+let less = [..."Hello,World"];
+
+for (let n of less){
+	console.log(n);
 }
-console.log(points.dist());
 
-let [x,y] = [1,2]
-console.log(x);
-console.log(y);
-
-let [x1, ...y1] = [1,2,3,4];
-console.log(x1);
-console.log(y1);
-
-let [x2, ...y2] = "Hello";
-console.log(x2);
-console.log(y2);
-/*=============*/
-let obj = new Object(
-	
-)
-console.log(typeof obj);
-console.log(obj);
-
-
+/* map, forEach,*/
