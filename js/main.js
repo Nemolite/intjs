@@ -193,3 +193,12 @@ console.log("copyWithin");
 let n22 = [1, 2, 3, 4, 5].copyWithin(2);
 console.log(n22);
 
+
+/*нахождение минимального и максимального элемента массива*/
+const numbers = [5, 6, 2, 3, 7];
+
+const max = Math.max.apply(null, numbers);
+console.log(max);
+
+const min = Math.min.apply(null, numbers);
+console.log(min);
